@@ -7,14 +7,15 @@
  * # stkWatchlistPanel
  */
 angular.module('stockDogApp')
-  .directive('stkWatchlistPanel',function ($location, $modal,WatchlistService) {
+  .directive('stkWatchlistPanel',function ($location, $modal,$routeParams,WatchlistService) {
     return {
       templateUrl: 'views/templates/Watchlist-Panel.html',
       restrict: 'E',
       scope:{},
       link: function ($scope) {
         //[2]Initialize variables
-            $scope.watchlist = {};
+        $scope.watchlist = {};
+        $scope.currentList = $routeParams.listId;
 
          var addListModal =  $modal({
                 scope: $scope,
