@@ -8,10 +8,9 @@
  * Controller of the stockDogApp
  */
 angular.module('stockDogApp')
-  .controller('WatchlistCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('WatchlistCtrl', function ($scope, $location, WatchlistService) {
+
+$scope.watchlists = WatchlistService.query();
+
+
   });
